@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Meu painel de tarefas</title>
+    <title>Minhas tarefas</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -14,21 +14,30 @@
 </head>
 
 <body>
-
-    <div class="cartao-aplicacao">
-
+    <main class="cartao-aplicacao">
         <header class="cabecalho-aplicacao">
 
-            <h1>Minhas tarefas ✨</h1>
+            <div class="titulo-aplicacao">
+                <span class="detalhe-titulo">MEU PAINEL</span>
 
-            <button class="botao-icone" id="botao-alterar-tema">
+                <h1>Minhas tarefas🌸💗</h1>
+
+                <p>Organize seu dia de um jeito simples.</p>
+            </div>
+
+            <button
+                class="botao-icone"
+                id="botao-alterar-tema"
+                title="Alterar tema">
+
                 <i class="fa-solid fa-moon"></i>
+
             </button>
 
         </header>
 
 
-        <div class="caixa-entrada">
+        <section class="caixa-entrada">
 
             <input
                 type="text"
@@ -38,27 +47,64 @@
                 maxlength="40"
             >
 
-            <button class="botao-principal" id="botao-adicionar">
+            <button
+                class="botao-principal"
+                id="botao-adicionar">
+
                 <i class="fa-solid fa-plus"></i>
+
                 Adicionar
+
             </button>
 
-        </div>
+        </section>
 
 
-        <ul class="lista-tarefas" id="lista-tarefas">
-            <!-- As tarefas serão inseridas dinamicamente via JavaScript -->
-        </ul>
+        <section class="area-tarefas">
+
+            <div class="titulo-lista">
+                <span>Suas tarefas</span>
+
+                <i class="fa-regular fa-heart"></i>
+            </div>
 
 
-        <footer class="rodape-aplicacao">
-            <span id="contador-tarefas">0 tarefas na lista</span>
-        </footer>
+            <ul class="lista-tarefas" id="lista-tarefas">
 
-    </div>
+                <!-- As tarefas serão inseridas dinamicamente via JavaScript -->
+
+            </ul>
+
+        </section>
+
+    </div> <!-- fecha o cartao-aplicacao -->
+
+
+  
 
 
     <script src="script.js"></script>
+
+
+        <footer class="rodape-aplicacao">
+
+            <span id="contador-tarefas">
+                0 tarefas na lista
+            </span>
+
+            
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+    <section class="foto-final">
+        <img src="image.png" alt="eu">
+    </section>
+
 
 </body>
 

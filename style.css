@@ -1,14 +1,14 @@
 /* Variáveis CSS - facilitar o uso de temas para formatação */
 
-:root {
-    --gradiente-fundo: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-    --fundo-cartao: #ffffff;
-    --cor-texto: #2d3748;
-    --cor-primaria: #6c5ce7;
-    --cor-primaria-destaque: #5b4bc4;
-    --cor-borda: #edf2f7;
-    --cor-perigo: #ff7675;
-    --cor-concluido: #a0aec0;
+:root { 
+    --gradiente-fundo: #f09db8; 
+    --fundo-cartao: #e7b8bd; 
+    --cor-texto: #2d3748; 
+    --cor-primaria: #d96f98; 
+    --cor-primaria-destaque: #c97394; 
+    --cor-borda: #f3d1de; 
+    --cor-perigo: #d85f82; 
+    --cor-concluido: #ffffff; 
 }
 
 
@@ -26,41 +26,49 @@ body.modo-escuro {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
     transition: background 0.3s, color 0.3s;
 }
 
 
+
 body {
-    background: var(--gradiente-fundo);
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65)),
+        url("fundo.png");
 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     min-height: 100vh;
-
     display: flex;
-
+    flex-direction: column;
     justify-content: center;
-
     align-items: center;
-
     padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-image: ur1("image.pnj");
 }
 
 
+body.modo-escuro {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+        url("fundo.png");
+}
+
 .cartao-aplicacao {
     background: var(--fundo-cartao);
-
     color: var(--cor-texto);
-
     width: 100%;
-
     max-width: 420px;
-
     border-radius: 20px;
-
     padding: 30px;
-
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
@@ -69,61 +77,42 @@ body {
 
 .cabecalho-aplicacao {
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     margin-bottom: 25px;
 }
 
 
 .cabecalho-aplicacao h1 {
     font-size: 1.5rem;
-
     font-weight: 700;
 }
 
 
 .botao-icone {
     background: transparent;
-
     border: none;
-
     font-size: 1.2rem;
-
     color: var(--cor-texto);
-
     cursor: pointer;
 }
-
-
 /* Caixa de entrada */
 
 .caixa-entrada {
     display: flex;
-
     gap: 10px;
-
     margin-bottom: 20px;
 }
 
 
 input[type="text"] {
     flex: 1;
-
     padding: 12px 15px;
-
     border: 2px solid var(--cor-borda);
-
     border-radius: 12px;
-
     outline: none;
-
     font-size: 0.95rem;
-
     background: transparent;
-
     color: var(--cor-texto);
 }
 
@@ -131,60 +120,37 @@ input[type="text"] {
 input[type="text"]:focus {
     border-color: var(--cor-primaria);
 }
-
-
 .botao-principal {
     background: var(--cor-primaria);
-
     color: white;
-
     border: none;
-
     padding: 12px 18px;
-
     border-radius: 12px;
-
     font-weight: 600;
-
     cursor: pointer;
-
     transition: transform 0.1s, background 0.2s;
 }
 
 
 .botao-principal:hover {
     background: var(--cor-primaria-destaque);
-
     transform: translateY(-2px);
 }
-
-
 /* Lista de tarefas */
 
 .lista-tarefas {
     list-style: none;
-
     max-height: 280px;
-
     overflow-y: auto;
 }
-
-
 .item-tarefa {
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     padding: 12px;
-
     background: var(--cor-borda);
-
     border-radius: 10px;
-
     margin-bottom: 10px;
-
     animation: aparecer 0.3s ease;
 }
 
@@ -192,34 +158,21 @@ input[type="text"]:focus {
 .item-tarefa span {
     word-break: break-word;
 }
-
-
 .item-tarefa.concluido span {
     text-decoration: line-through;
-
     color: var(--cor-concluido);
 }
-
-
 .acoes-tarefa {
     display: flex;
-
     gap: 8px;
 }
-
-
 .botao-acao {
     background: none;
-
     border: none;
-
     cursor: pointer;
-
     font-size: 1rem;
-
     color: var(--cor-texto);
 }
-
 
 .botao-acao:hover {
     color: var(--cor-perigo);
@@ -230,11 +183,8 @@ input[type="text"]:focus {
 
 .rodape-aplicacao {
     margin-top: 15px;
-
     font-size: 0.85rem;
-
     color: var(--cor-concluido);
-
     text-align: center;
 }
 
@@ -242,17 +192,31 @@ input[type="text"]:focus {
 /* Animação */
 
 @keyframes aparecer {
-
     from {
         opacity: 0;
-
         transform: translateX(10px);
     }
-
     to {
         opacity: 1;
-
         transform: translateX(0);
     }
 
+}
+
+.foto-final {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.foto-final img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border: 5px solid rgb(228, 67, 121);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
