@@ -1,111 +1,96 @@
-<!DOCTYPE html>
-<html lang="pt-br">
 
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Minhas tarefas</title>
 
     <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <main class="cartao-aplicacao">
-        <header class="cabecalho-aplicacao">
 
-            <div class="titulo-aplicacao">
-                <span class="detalhe-titulo">MEU PAINEL</span>
+    <main class="container">
 
-                <h1>Minhas tarefas🌸💗</h1>
-
-                <p>Organize seu dia de um jeito simples.</p>
+        <header class="cabecalho">
+            <div class="titulo-area">
+                <img src="image.png" alt="Minha foto" class="foto-perfil">
+                <h1>Minhas tarefas 🌸</h1>
             </div>
 
-            <button
-                class="botao-icone"
-                id="botao-alterar-tema"
-                title="Alterar tema">
-
-                <i class="fa-solid fa-moon"></i>
-
+            <button id="botao-alterar-tema" class="botao-tema" title="Alterar tema">
+                <i class="fas fa-moon"></i>
             </button>
-
         </header>
 
+        <p class="subtitulo">Organize seu dia, uma tarefa de cada vez!</p>
 
-        <section class="caixa-entrada">
-
+        <form id="formulario-tarefas">
             <input
                 type="text"
-                name="campo-tarefas"
                 id="campo-tarefas"
-                placeholder="O que vamos fazer hoje?..."
+                placeholder="O que vamos fazer hoje?"
                 maxlength="40"
+                autocomplete="off"
             >
-
-            <button
-                class="botao-principal"
-                id="botao-adicionar">
-
-                <i class="fa-solid fa-plus"></i>
-
-                Adicionar
-
+            <button type="submit" id="botao-adicionar">
+                <i class="fas fa-plus"></i> Adicionar
             </button>
+        </form>
 
-        </section>
-
-
-        <section class="area-tarefas">
-
-            <div class="titulo-lista">
-                <span>Suas tarefas</span>
-
-                <i class="fa-regular fa-heart"></i>
+        <section class="resumo">
+            <div class="resumo-item">
+                <span>Total</span>
+                <strong id="contador-total">0</strong>
             </div>
 
+            <div class="resumo-item">
+                <span>Pendentes</span>
+                <strong id="contador-pendentes">0</strong>
+            </div>
 
-            <ul class="lista-tarefas" id="lista-tarefas">
-
-                <!-- As tarefas serão inseridas dinamicamente via JavaScript -->
-
-            </ul>
-
+            <div class="resumo-item">
+                <span>Concluídas</span>
+                <strong id="contador-tarefas">0</strong>
+            </div>
         </section>
 
-    </div> <!-- fecha o cartao-aplicacao -->
+        <nav class="filtros">
+            <button class="botao-filtro ativo" data-filtro="todas">Todas</button>
+            <button class="botao-filtro" data-filtro="pendentes">Pendentes</button>
+            <button class="botao-filtro" data-filtro="concluidas">Concluídas</button>
+        </nav>
 
+        <ul id="lista-tarefas"></ul>
 
-  
+        <p id="mensagem-vazia">Você ainda não tem tarefas por aqui. ✨</p>
 
-
-    <script src="script.js"></script>
-
-
-        <footer class="rodape-aplicacao">
-
-            <span id="contador-tarefas">
-                0 tarefas na lista
-            </span>
-
-            
-
+        <footer class="rodape">
+            <button id="botao-informacoes" class="botao-informacoes">
+                <i class="fas fa-circle-info"></i>
+                Novas funcionalidades
+            </button>
         </footer>
 
     </main>
 
+    <dialog id="modal-informacoes">
+        <div class="modal-conteudo">
+            <h2><i class="fas fa-star"></i> Novas funcionalidades</h2>
+
+            <p><strong>1. Filtros:</strong> permitem visualizar todas as tarefas, somente as pendentes ou somente as concluídas.</p>
+
+            <p><strong>2. Editar tarefas:</strong> permite alterar o texto de uma tarefa já cadastrada.</p>
+
+            <p><strong>Outras melhorias:</strong> concluir tarefas, excluir tarefas, salvar os dados mesmo após atualizar a página e alternar entre os temas claro e escuro.</p>
+
+            <button id="botao-fechar-modal">Entendi!</button>
+        </div>
+    </dialog>
 
     <script src="script.js"></script>
-
-    <section class="foto-final">
-        <img src="image.png" alt="eu">
-    </section>
-
-
 </body>
-
 </html>
+
